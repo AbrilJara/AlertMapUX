@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block title %}Configuración{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">Configuración</li>
+{% endblock %}
+{% block content %}
+<div class="container">
+		<div class="row gutters-sm">
+			<h1>Configuraciones de la página</h1>
+			<hr>
+			<div class="col-md-4 d-md-block">
+				<div class="card">
+				<div class="card-body">
+					<nav class="nav flex-column nav-pills nav-gap-y-1">
+						<button class="nav-link active" id="pill-accesibilidad-tab" data-bs-toggle="tab" data-bs-target="#accesibilidad" type="button" role="tab" aria-controls="accesibilidad" aria-selected="true">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Accesibilidad
+						<button class="nav-link" id="pill-localizacion-tab" data-bs-toggle="tab" data-bs-target="#localizacion" type="button" role="tab" aria-controls="localizacion" aria-selected="true">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings mr-2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Localización
+						</button>
+					</nav>
+				</div>
+				</div>
+			</div>
+		  	<div class="col-md-8">
+			  	<div class="card-body tab-content" id="pills-tabContent">
+					<div class="tab-pane fade show active" role="tabpanel" aria-labelledby="pill-accesibilidad-tab" id="accesibilidad">
+						<h2>Opciones de accesibilidad</h2>
+						<p>Aquí se pueden ajustar distintos elementos para que la página se te haga más fácil de utilizar.</p>
+						<hr>
+						<form>
+							<div class="mb-3">
+								<label for="textRange" class="form-label">Aumentar tamaño del texto</label>
+								<input type="range" class="form-range" value="0" min="0" max="50" step="10" id="textRange" oninput="tamanioTexto(this.value)">
+								<small id="tamanio-letra-ayuda" class="form-text text-muted">Elegí un tamaño de letra que se ajuste mejor a tus necesidades.</small>
+							</div>
+							<div class="mb-3 row align-items-center">
+								<div class="col">
+									<label class="form-check-label" for="switchColor">Color invertido</label>
+									<p class="text-muted mb-0">Active el color invertido de la página si el contraste de la página no es suficiente</p>
+								</div>
+								<div class="col-auto">
+									<div class="form-check form-switch">
+										<input class="form-check-input" type="checkbox" role="switch" id="switchColor">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane fade" role="tabpanel" aria-labelledby="pill-localizacion-tab" id="localizacion">
+						<h2>Opciones de localización</h2>
+						<p>Configura opciones que corresponden con tu ubicación actual. Estas opciones afectan lo que vas a ver en el mapa de alertas.</p>
+						<hr>
+						<form>
+							<div class="form-group">
+								<div class="row align-items-center">
+									<div class="col">
+										<label class="form-check-label" for="switchGPS">Sistema de Posicionamiento Global (GPS)</label>
+										<strong class="mb-2"></strong>
+										<p class="text-muted mb-0">Activar o descativar Sistema de Posicionamiento Global (GPS). Al activar el Sistema de Posicionamiento Global el mapa de alertas se centrará en tu ubicación actual.</p>
+									</div>
+									<div class="col-auto">
+										<div class="form-check form-switch">
+											<input class="form-check-input" type="checkbox" role="switch" id="switchGPS">
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+			  	</div>
+			</div>
+		  </div>
+		</div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+
+
+const switchColor = document.getElementById('switchColor');
+const switchGPS = document.getElementById('switchGPS');
+
+switchColor.addEventListener('change', (event) => {
+	console.log('Color invertido');
+})
+
+switchGPS.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    console.log('GPS activado');
+  } else {
+    console.log('GPS desactivado');
+  }
+})
+
+function tamanioTexto(incremento){
+    console.log(incremento);
+}
+
+
+</script>
+{% endblock %}

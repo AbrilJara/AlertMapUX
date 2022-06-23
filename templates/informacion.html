@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block styles %}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+{% block title %}Infromación{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="#">Inicio</a></li>
+<li class="breadcrumb-item active" aria-current="page">Información</li>
+{% endblock %}
+{% block content %}
+<div class="container">
+
+	<div role="main" class="row py-lg-5">
+		<h1>Cual es el objetivo de la aplicación</h1>
+	<p class="col-md-8">Debido a que en el 2023 se conmemoran 10 años de las inundaciones en La Plata, la catedra de Diseño de Interfaces de Usuario de la facultad de informatica brindó a sus alumnes con material correspondiente a esa época y como proyecto propuso pensar en ideas para poder ayudar a las personas del barrio Maldonado las cuales aún el día de hoy sufren distintos tipos de problema.</p>
+	<p class="col-md-8">Bajo toda esta información de distintas declaraciones de como vivieron las personas ese momento y como fue la situación es que surgió la idea de esta aplicación la cual busca que las personas del barrio puedan ayudarse entre sí sin la necesidad de esperar ayuda externa. Entonces la idea es que a traves de distintas alertas como puede ser que lugares estan inundados, donde faltan reparaciones, que lugares son seguros u otra información la gente pueda estar más informada y ante el potencial peligro de una catastrofe natural no las agarre tan desprevenidas como aquella vez y ya sepan como actuar en esa situación.</p>
+		<p class="col-md-8">Además, mi deseo con esta aplicación es poder brindar información y herramientas extra externas en la cuales trabajaron mucha gente. Estos tienen, al igual que esta aplicación, el fin de ayudar a personas para evitar que situaciones como las del 2013 vuelvan a suceder.</p>
+	</div>
+
+	<hr class="col-3 col-md-2 mb-5">
+
+	<div role="complementary" class="row g-5">
+
+	  <div role="section" class="col-md-6">
+		<h2>Recursos externos</h2>
+		<p>En esta sección se brindan los estudios hechos por distintas facultades.</p>
+		<ul class="icon-list ps-0">
+		  <li class="d-flex align-items-start mb-1"><span><a href="/docs/5.2/getting-started/introduction/">Bootstrap quick start guide</a> - este estudio muestra los riesgos de la construcción sin planeación y como se debería construir consientemente.</span></li>
+		</ul>
+	  </div>
+	  
+
+	<div role="section" class="col-md-6">
+		<h2>Herramientas externas</h2>
+		<p>Aplicaciones desarrolladas por compañerxs del grupo que tienen diferentes funciones, desde juegos didácticos para niñes hasta simulaciones de inundaciones</p>
+		<ul class="icon-list ps-0">
+		  <li class="d-flex align-items-start mb-1"><span><a href="/docs/5.2/getting-started/introduction/">Bootstrap quick start guide</a> - Rompecabezaz educativo</span></li>
+		</ul>
+	  </div>
+
+	</div>
+</div>
+{% endblock %}
