@@ -31,8 +31,9 @@
 						<form>
 							<div class="mb-3">
 								<label for="textRange" class="form-label">Aumentar tamaño del texto</label>
-								<input type="range" class="form-range" value="0" min="0" max="50" step="10" id="textRange" oninput="tamanioTexto(this.value)">
+								<input type="range" class="form-range" value="0" min="0" max="5" id="textRange" aria-describedby="estadoRangoTexto"oninput="tamanioTexto(this.value)">
 								<small id="tamanio-letra-ayuda" class="form-text text-muted">Elegí un tamaño de letra que se ajuste mejor a tus necesidades.</small>
+								<p> Texto aumentado en <span id="estadoRangoTexto">0</span>%</p>
 							</div>
 							<div class="mb-3 row align-items-center">
 								<div class="col">
@@ -49,7 +50,7 @@
 					</div>
 					<div class="tab-pane fade" role="tabpanel" aria-labelledby="pill-localizacion-tab" id="localizacion">
 						<h2>Opciones de localización</h2>
-						<p>Configura opciones que corresponden con tu ubicación actual. Estas opciones afectan lo que vas a ver en el mapa de alertas.</p>
+						<p>Configura opciones que corresponden con tu ubicación actual. Estas opciones afectan lo que vas a ver en el mapa de alertas barrial.</p>
 						<hr>
 						<form>
 							<div class="form-group">
@@ -82,7 +83,38 @@ const switchColor = document.getElementById('switchColor');
 const switchGPS = document.getElementById('switchGPS');
 
 switchColor.addEventListener('change', (event) => {
-	console.log('Color invertido');
+
+	if (event.currentTarget.checked) {
+		var css = `html {
+			-webkit-filter: invert(100%);
+			-moz-filter: invert(100%);
+			-o-filter: invert(100%);
+			-ms-filter: invert(100%);
+		}`	
+	
+		const head = document.head
+		const style = document.createElement('style')
+		style.type = 'text/css';
+		style.id = 'inversionDeColor';
+
+		if (style.styleSheet) {
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+		head.appendChild(style);
+	} 
+	
+	else {
+		var index = Array.from(document.styleSheets).findIndex(e => e.ownerNode.id == 'inversionDeColor')	
+
+		if(index == -1){
+			console.log('No existe la hoja de estilos')
+		}
+		else{
+			document.head.removeChild(document.styleSheets[index].ownerNode)
+		}
+	}
 })
 
 switchGPS.addEventListener('change', (event) => {
@@ -93,8 +125,12 @@ switchGPS.addEventListener('change', (event) => {
   }
 })
 
-function tamanioTexto(incremento){
-    console.log(incremento);
+function tamanioTexto(valor){
+	const aumentoPorcentual = valor * 10;
+    document.getElementById('estadoRangoTexto').innerHTML = aumentoPorcentual + "";
+	const aumentoRelativo = 1 + valor * 0.1;
+	console.log(aumentoRelativo);
+    document.getElementsByTagName( "html" )[0].style[ "font-size" ] = aumentoRelativo + "rem";
 }
 
 
