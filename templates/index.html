@@ -1,6 +1,12 @@
 {% extends "layout.html" %}
 {% block styles %}
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <style>
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.75rem;
+    }
+  </style>
 {% endblock %}
 {% block title %}Index{% endblock %}
 {% block breadcrumb %}
@@ -20,36 +26,33 @@
     <div class="pb-2 border-bottom"></div>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
       <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
-        </div>
+        <span class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
+          <i class="bi bi-info" aria-hidden="true"></i>
+        </span>
         <h2>Informate</h2>
         <p>Cononcé más sobre este proyecto y obtené más información sobre otras aplicaciones y estudios realcionados.</p>
         <a href="/informacion" class="icon-link d-inline-flex align-items-center">
-          Más información
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+          Más información<i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
       </div>
 <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+          <i class="bi bi-map" aria-hidden="true"></i>
         </div>
         <h2>Mapa de alertas</h2>
         <p>En este mapa se pueden ver las alertas creadas por todas las personas del barrio.</p>
         <a href="mapa" class="icon-link d-inline-flex align-items-center">
-          Ir al mapa
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+          Ir al mapa<i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
       </div>
       <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+          <i class="bi bi-geo-alt" aria-hidden="true"></i>
         </div>
         <h2>Creación de alertas</h2>
         <p>Aquí te podés informar brevemente de como crear alertas propias para luego ver en el mapa.</p>
         <a href="alertas" class="icon-link d-inline-flex align-items-center">
-          Crear alerta
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"></use></svg>
+          Crear alerta<i class="bi bi-chevron-right" aria-hidden="true"></i>
         </a>
       </div>
     </div>
