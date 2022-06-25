@@ -1,11 +1,9 @@
 from flask import Flask
-from flask_bootstrap import Bootstrap5
 from flask import request
 from flask import render_template
 from flask import abort, redirect, url_for
 
 app = Flask(__name__)
-bootstrap = Bootstrap5(app)
 
 @app.route("/")
 def index():
