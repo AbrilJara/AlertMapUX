@@ -31,9 +31,13 @@
 						<form>
 							<div class="mb-3">
 								<label for="textRange" class="form-label">Tamaño del texto</label>
-								<input type="range" class="form-range" value="{{ request.cookies.get('tamanio_texto') }}" min="0" max="5" id="textRange" aria-describedby="estadoRangoTexto"oninput="tamanioTexto(this.value)">
+								<input type="range" class="form-range" value="{{ request.cookies.get('tamanio_texto') }}" min="0" max="5" id="textRange" aria-describedby="estadoRangoTexto" oninput="tamanioTexto(this.value)">
 								<small id="tamanio-letra-ayuda" class="form-text text-muted">Elegí un tamaño de letra que se ajuste mejor a tus necesidades.</small>
-								<p> Texto aumentado en <span id="estadoRangoTexto">{{ request.cookies.get('tamanio_texto') | int * 10  }}</span>%</p>
+								<p>
+									<span id="estadoRangoTexto">
+										Texto aumentado en {{ request.cookies.get('tamanio_texto') | int * 10  }}%
+									</span>
+								</p>
 							</div>
 							<div class="mb-3 row align-items-center">
 								<div class="col">
@@ -138,7 +142,7 @@ switchGPS.addEventListener('change', (event) => {
 
 function tamanioTexto(valor){
 	const aumentoPorcentual = valor * 10;
-    document.getElementById('estadoRangoTexto').innerHTML = aumentoPorcentual + "";
+    document.getElementById('estadoRangoTexto').innerHTML = "Texto aumentado en " + aumentoPorcentual + "%";
 	const aumentoRelativo = 1 + valor * 0.1;
     document.getElementsByTagName( "html" )[0].style[ "font-size" ] = aumentoRelativo + "rem";
 	document.cookie = "tamanio_texto=" + valor;
