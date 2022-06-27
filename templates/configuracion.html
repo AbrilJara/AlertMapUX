@@ -30,10 +30,10 @@
 						<hr>
 						<form>
 							<div class="mb-3">
-								<label for="textRange" class="form-label">Aumentar tamaño del texto</label>
-								<input type="range" class="form-range" value="0" min="0" max="5" id="textRange" aria-describedby="estadoRangoTexto"oninput="tamanioTexto(this.value)">
+								<label for="textRange" class="form-label">Tamaño del texto</label>
+								<input type="range" class="form-range" value="{{ request.cookies.get('tamanio_texto') }}" min="0" max="5" id="textRange" aria-describedby="estadoRangoTexto"oninput="tamanioTexto(this.value)">
 								<small id="tamanio-letra-ayuda" class="form-text text-muted">Elegí un tamaño de letra que se ajuste mejor a tus necesidades.</small>
-								<p> Texto aumentado en <span id="estadoRangoTexto">0</span>%</p>
+								<p> Texto aumentado en <span id="estadoRangoTexto">{{ request.cookies.get('tamanio_texto') | int * 10  }}</span>%</p>
 							</div>
 							<div class="mb-3 row align-items-center">
 								<div class="col">
@@ -42,7 +42,14 @@
 								</div>
 								<div class="col-auto">
 									<div class="form-check form-switch">
-										<input class="form-check-input" type="checkbox" role="switch" id="switchColor">
+										<input class="form-check-input" 
+											type="checkbox" 
+											role="switch" 
+											id="switchColor" 
+											{% if request.cookies.get('invert_color') == 'true' %}
+												checked
+											{% endif %}
+										>
 									</div>
 								</div>
 							</div>
@@ -103,6 +110,8 @@ switchColor.addEventListener('change', (event) => {
 			style.appendChild(document.createTextNode(css));
 		}
 		head.appendChild(style);
+
+		document.cookie = "invert_color=true";
 	} 
 	
 	else {
@@ -114,6 +123,8 @@ switchColor.addEventListener('change', (event) => {
 		else{
 			document.head.removeChild(document.styleSheets[index].ownerNode)
 		}
+
+		document.cookie = "invert_color=false";
 	}
 })
 
@@ -129,8 +140,10 @@ function tamanioTexto(valor){
 	const aumentoPorcentual = valor * 10;
     document.getElementById('estadoRangoTexto').innerHTML = aumentoPorcentual + "";
 	const aumentoRelativo = 1 + valor * 0.1;
-	console.log(aumentoRelativo);
     document.getElementsByTagName( "html" )[0].style[ "font-size" ] = aumentoRelativo + "rem";
+	document.cookie = "tamanio_texto=" + valor;
+
+	console.log(aumentoRelativo);
 }
 
 
