@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}Ayuda{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="/">Inicio</a></li>
+<li class="breadcrumb-item active" aria-current="page">Ayuda</li>
+{% endblock %}
+{% block content %}
+<div class="container">
+
+	<div role="main" class="row py-lg-2">
+		<h1>¿Cómo puedo aprender más sobre la aplicación?</h1>
+		<p class="col-md-8">A continuación te presentamos algunas preguntas que pueden
+			servirte para encontrar la ayuda que necesitas.
+		</p>
+
+		<div class="row py-lg-2">
+			<h2>¿Cómo puedo aprender más sobre la aplicación?</h2>
+			<p class="col-md-8">Si te interesa saber más sobre como la aplicación funciona
+				y cual es su motivación podes visitar la página de  
+				<a href="/informacion">información</a>. En esta misma además se brindan recursos
+				externos a otras páginas y estudios que pueden ser de utilidad.
+			</p>
+		</div>
+
+		<div class="row py-lg-2">
+			<h2>¿Cómo puedo crear una alerta?</h2>
+			<p class="col-md-8">
+				Para poder crear una alerta simplemente tenes que llenar un formulario con la 
+				información pedida. Este formulario está en la página de 
+				<a href="/alertas">crear alerta</a>, ahí vas a encontrar más detalladamente
+				los pasos a seguir para poder crear tu alerta.
+		</div>
+
+		<div class="row py-lg-2">
+			<h2>¿Dónde estan mis alertas creadas?</h2>
+			<p class="col-md-8">
+				Todas la alertas creadas ya sean propias o creadas por otras personas pueden verse
+				en la página de <a href="/mapa">ver el mapa</a>. Ahí se explica como se muestra la información
+				en el mapa y explica como ver la información detallada de cada punto que se corresponde
+				con una alerta.
+			</p>		
+		</div>
+
+		<div class="row py-lg-2">
+			<h2>Estoy teniendo problemas</h2>
+			<p class="col-md-8">
+				Si las preguntas de arriba no te ayudaron con el problema que estas teniendo podes
+				consultar la página de <a href="/contactos"> contactos</a> donde tenes distintas opciones para contactarnos
+				y enviar tu problema en particular para que podamos ayudarte.
+			</p>
+		</div>
+
+	</div>
+
+</div>
+{% endblock %}

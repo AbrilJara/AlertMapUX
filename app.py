@@ -36,3 +36,11 @@ def alertas():
 @app.route("/informacion")
 def informacion():
     return render_template('informacion.html')
+
+@app.route("/ayuda")
+def ayuda():
+    return render_template('ayuda.html')
+
+@app.route("/contacto")
+def contacto():
+    return render_template('contacto.html')

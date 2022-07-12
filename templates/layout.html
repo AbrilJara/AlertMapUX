@@ -23,7 +23,7 @@
   <body class="d-flex flex-column min-vh-100">
 	<header role="banner">
 
-		<nav role="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav role="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Barra de navegación">
 		  <div class="container-fluid">
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Menú de navegación">
 			  <span class="navbar-toggler-icon"></span>
@@ -32,16 +32,21 @@
 				<a class="navbar-brand" href="/"><i class="bi bi-globe2" aria-hidden="true"></i>Nombre aplicación</a>
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="/">Inicio</a>
+						<a class="nav-link" href="/">Inicio</a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link" href="/configuracion">Configuración</a>
+						<a class="nav-link" href="/informacion">Información</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/mapa">Ver mapa</a>
+					</li>
+					<li class="nav-item">
+							<a class="nav-link" href="/alertas">Crear alerta</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/configuracion">Configuración</a>
 					</li>
 			  </ul>
-			  <form class="d-flex" role="search">
-				<input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar en la página">
-				<button class="btn btn-outline-success" type="submit">Buscar</button>
-			  </form>
 			</div>
 		  </div>
 		</nav>
@@ -56,10 +61,10 @@
 	
 	<footer role="contentinfo" class="mt-auto py-3 my-4">
 		<ul class="nav justify-content-center border-top pb-1 mb-1">
-		  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Ayuda</a></li>
-		  <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contacto</a></li>
+		  <li class="nav-item"><a href="/ayuda" class="nav-link px-2 text-muted">Ayuda</a></li>
+		  <li class="nav-item"><a href="/contacto" class="nav-link px-2 text-muted">Contacto</a></li>
 		</ul>
-		<p class="text-center text-muted" aria-label="Información de creación"> Creada por 2022 por Abril Jara</p>
+		<p class="text-center text-muted" aria-label="Información de creación"> Creada por Abril Jara, 2022</p>
 	</footer>
   	
 	<!-- Optional JavaScript -->
@@ -70,6 +75,16 @@
 		const aumentoRelativo = 1 + valor * 0.1;
 		document.getElementsByTagName( "html" )[0].style[ "font-size" ] = aumentoRelativo + "rem";
 		console.log(aumentoRelativo);
+	</script>
+
+	<script>
+		let current_url = document.location;
+		document.querySelectorAll(".navbar .nav-link").forEach(function(e){
+		   if(e.href == current_url){
+			  e.classList += " active";
+			  e.ariaCurrent = "page";
+		   }
+		});
 	</script>
 	{% block scripts %}
 	{% endblock %}

@@ -1,41 +1,132 @@
 {% extends "layout.html" %}
 {% block title %}Infromación{% endblock %}
 {% block breadcrumb %}
-<li class="breadcrumb-item"><a href="#">Inicio</a></li>
+<li class="breadcrumb-item"><a href="/">Inicio</a></li>
 <li class="breadcrumb-item active" aria-current="page">Información</li>
 {% endblock %}
 {% block content %}
 <div class="container">
+	<div role="main">
+		<div class="row py-lg-2">
+			<h1>Cual es el objetivo de la aplicación</h1>
+			<p class="col-md-8">Debido a que en el 2023 se conmemoran 10 años de las inundaciones en La Plata, la catedra de Diseño de Interfaces de Usuario de la facultad de informatica brindó a sus alumnes con material correspondiente a esa época y como proyecto propuso pensar en ideas para poder ayudar a las personas del barrio Maldonado las cuales aún el día de hoy sufren distintos tipos de problema.</p>
+			<p class="col-md-8">Bajo toda esta información de distintas declaraciones de como vivieron las personas ese momento y como fue la situación es que surgió la idea de esta aplicación la cual busca que las personas del barrio puedan ayudarse entre sí sin la necesidad de esperar ayuda externa. Entonces la idea es que a traves de distintas alertas como puede ser que lugares estan inundados, donde faltan reparaciones, que lugares son seguros u otra información la gente pueda estar más informada y ante el potencial peligro de una catastrofe natural no las agarre tan desprevenidas como aquella vez y ya sepan como actuar en esa situación.</p>
+			<p class="col-md-8">Además, mi deseo con esta aplicación es poder brindar información y herramientas extra externas en la cuales trabajaron mucha gente. Estos tienen, al igual que esta aplicación, el fin de ayudar a personas para evitar que situaciones como las del 2013 vuelvan a suceder.</p>
+		</div>
 
-	<div role="main" class="row py-lg-5">
-		<h1>Cual es el objetivo de la aplicación</h1>
-	<p class="col-md-8">Debido a que en el 2023 se conmemoran 10 años de las inundaciones en La Plata, la catedra de Diseño de Interfaces de Usuario de la facultad de informatica brindó a sus alumnes con material correspondiente a esa época y como proyecto propuso pensar en ideas para poder ayudar a las personas del barrio Maldonado las cuales aún el día de hoy sufren distintos tipos de problema.</p>
-	<p class="col-md-8">Bajo toda esta información de distintas declaraciones de como vivieron las personas ese momento y como fue la situación es que surgió la idea de esta aplicación la cual busca que las personas del barrio puedan ayudarse entre sí sin la necesidad de esperar ayuda externa. Entonces la idea es que a traves de distintas alertas como puede ser que lugares estan inundados, donde faltan reparaciones, que lugares son seguros u otra información la gente pueda estar más informada y ante el potencial peligro de una catastrofe natural no las agarre tan desprevenidas como aquella vez y ya sepan como actuar en esa situación.</p>
-		<p class="col-md-8">Además, mi deseo con esta aplicación es poder brindar información y herramientas extra externas en la cuales trabajaron mucha gente. Estos tienen, al igual que esta aplicación, el fin de ayudar a personas para evitar que situaciones como las del 2013 vuelvan a suceder.</p>
+		<hr class="col-3 col-md-2 mb-3">
+
+		<div class="row py-lg-2">
+			<h1>Limitaciones de la aplicación</h1>
+
+			<p class="col-md-8">Si bien esta página cumple con las normas de accesibilidad 
+				<a class="confirmation" href="https://www.w3.org/TR/WCAG21/">versión 2.1 de WCAG</a> existen 
+				limitaciones en la misma propio de la elección de las herramientas utilizadas 
+				para su desarrollo. A continuación se enumeran las mismas.</p>
+
+			<h2>Sobre accesibilidad</h2>
+
+			<p class="col-md-8">La página no presenta configuración para herramientas de 
+				asistentecia auditiva y ocultamos la configuración que tiene que ver con la 
+				visibildiad de la página a este tipo de herramientas ya que creía podía afectar
+				la navegación de la personas que utilicen las mismas.</p>
+
+			<p class="col-md-8">Si bien existe configuración para aumentar el tamaño del texto de
+				la página esta no puede aplicarse al contenido embebido (contenido agregado de 
+				páginas externas a la propia). Por eso al cambiar la letra el formulario de 
+				creación de alertas o  el mapa donde se ven estas no cambia.</p>
+
+			<h2>Sobre el mapa</h2>
+
+			<p class="col-md-8">Debido a que la herramienta utilizada para generar el mapa es 
+				utilizada en su versión gratuita la actualización del mapa solo se hace una vez 
+				cada hora, por lo que si tu alerta no aparece intenta esperar un tiempo y volvé
+				a recargar la página.</p>
+
+			<p class="col-md-8">Por temas también relacionados con la herramienta creadora del 
+				mapa la lectura de la información detallada de cada alerta en el mapa se lee 
+				en ingles.</p>
+
+		</div>
 	</div>
 
 	<hr class="col-3 col-md-2 mb-3">
 
 	<div role="complementary" class="row g-5">
+		
+		<h1>Recursos externos</h1>
 
-	  <div role="section" class="col-md-6">
-		<h2>Recursos externos</h2>
-		<p>En esta sección se brindan los estudios hechos por distintas facultades.</p>
-		<ul class="icon-list ps-0">
-		  <li class="d-flex align-items-start mb-1"><span><a href="#">Estudio</a> - este estudio muestra los riesgos de la construcción sin planeación y como se debería construir consientemente.</span></li>
-		</ul>
-	  </div>
+		<div role="section" class="col-md-6">
+			<h2>Estudios realizados</h2>
+			<p>En esta sección se brindan los estudios hechos por distintas facultades.</p>
+			<ul class="icon-list ps-0">
+				<li class="d-flex align-items-start mb-1">
+					<span>
+						<a class="confirmation" href="http://sedici.unlp.edu.ar/handle/10915/59633">
+							Análisis de riesgo, estrategias de intervención</a> - 
+						Las inundaciones en La Plata, Berisso y Ensenada: análisis de riesgo, estrategias de 
+						intervención. Hacia la construcción de un observatorio ambiental.
+					</span>
+				</li>
+				<li class="d-flex align-items-start mb-1">
+					<span>
+						<a class="confirmation" href="http://sedici.unlp.edu.ar/handle/10915/112896">
+							Inundaciones en La Plata: Qué aprendimos y qué más debemos saber</a> - 
+						Manual Plan de Reducción de Riesgo por Inundaciones 
+						en la Región de La Plata (Plan RRI La Plata - Qué hacer).
+					</span>
+				</li>
+				<li class="d-flex align-items-start mb-1">
+					<span>
+						<a class="confirmation" href="https://revistas.unlp.edu.ar/Habitat/article/view/3754">
+							Inundaciones urbanas. Mapas de riesgo y lineamientos de ordenamiento 
+							territorial en la región del gran La Plata</a> - 
+						Se aborda la problemática de las inundaciones urbanas, partiendo de entender 
+						que los conflictos hídricos son de naturaleza multicausal, pero que preponderantemente 
+						responden a los efectos del cambio climático.
+					</span>
+				</li>
+				<li class="d-flex align-items-start mb-1">
+					<span>
+						<a class="confirmation" href="http://www.biosfera.org/wp-content/uploads/2015/07/2015_Marion_Mignoty_Inundacion.pdf">
+							Estado actual de gestión de riesgo de inundación en el partido de 
+							La Plata</a> - 
+						Enfoque sobre obras, asistancia e información.
+					</span>
+				</li>
+			</ul>
+		</div>
 	  
 
-	<div role="section" class="col-md-6">
-		<h2>Herramientas externas</h2>
-		<p>Aplicaciones desarrolladas por compañerxs del grupo que tienen diferentes funciones, desde juegos didácticos para niñes hasta simulaciones de inundaciones</p>
-		<ul class="icon-list ps-0">
-		  <li class="d-flex align-items-start mb-1"><span><a href="#">Juego rompecabezas</a> - rompecabezaz educativo creado para informar a niñes sobre que hacer ante una inundación</span></li>
-		  <li class="d-flex align-items-start mb-1"><span><a href="#">Simulacion de inundaciones</a> - esta aplicación es una forma de mostrar que es lo que pasa cuando el nivel de agua sube</span></li>
-		</ul>
-	  </div>
+		<div role="section" class="col-md-6">
+			<h2>Otras aplicaciones</h2>
+			<p>Aplicaciones desarrolladas por compañerxs de la facultad que tienen diferentes funciones, desde juegos didácticos para niñes hasta simulaciones de inundaciones</p>
+			<ul class="icon-list ps-0">
+				<li class="d-flex align-items-start mb-1">
+					<span>
+						<a class="confirmation" href="https://expo-generar-conciencia.herokuapp.com/">
+							Generar conciencia</a> - 
+							Aborda la inundación desde la mirada y experiencia de los 
+							sobrevivientes y testigos. Cuenta con 6 secciones para recorrer 
+							en forma cronológica, con material educativo interactivo, para 
+							un aprendizaje entretenido y dinámico.
+					</span>
+				</li>
+			</ul>
+		</div>
 
 	</div>
 </div>
 {% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Estás por salir de esta página. ¿Estás segurx que querés salir?')) e.preventDefault();
+    };
+    for (var i = 0; i < elems.length; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+{% endblock %}
+
