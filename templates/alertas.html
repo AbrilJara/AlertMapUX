@@ -12,7 +12,7 @@
 {% block content %}
 <div class="container">
 
-	<div role="main" class="row py-lg-5">
+	<div role="main" class="row py-lg-3">
 		<div class="col-md-8">
 			<h1>Como crear alertas</h1>
 			<p>En esta página se muestra como podés crear alertas para que 
@@ -26,10 +26,37 @@
 	<hr class="col-3 col-md-2 mb-3">
 
 	<div role="complementary" class="container">
-		<h2>Formulario de creación de alertas</h2>
+		<h2 class="mb-3" id="tituloCreacionAlertas">Formulario de creación de alertas</h2>
 		<div class="ratio" style="--bs-aspect-ratio: 145%;">
-			<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf4Mqa5Du4NTel2xeyAtnohA-p72h0kGuQhrtO0gyCrZ66kpA/viewform?embedded=true" title="Crear alerta">Cargando…</iframe>
+			<iframe onload="scroller()" src="https://docs.google.com/forms/d/e/1FAIpQLSf4Mqa5Du4NTel2xeyAtnohA-p72h0kGuQhrtO0gyCrZ66kpA/viewform?embedded=true" title="Crear alerta">Cargando…</iframe>
+          allowfullscreen="" title="Mapa de alertas barrial">Cargando…</iframe>
 		</div>	
 	</div>
 </div>
+{% endblock %}
+{% block scripts %}
+<script type="application/javascript">
+    var loadCounter = 0;
+	var element_to_scroll_to = document.getElementById('tituloCreacionAlertas');
+    var scroller = function() {
+        loadCounter += 1;
+        if (loadCounter % 2 === 0) {
+            element_to_scroll_to.scrollIntoView();
+        }
+    }
+
+	document.addEventListener('readystatechange', event => { 
+
+	// When HTML/DOM elements are ready:
+	if (event.target.readyState === "interactive") {   //does same as:  ..addEventListener("DOMContentLoaded"..
+		console.log("hi 1");
+	}
+
+	// When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+	if (event.target.readyState === "complete") {
+		console.log("hi 2");
+	}
+	});
+
+</script>
 {% endblock %}
