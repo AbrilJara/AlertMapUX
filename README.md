@@ -4,11 +4,13 @@
 
 Aplicación para creación de avisos y alertas barriales con el fin de informar de distintas situaciones del estilo de lugares que necesitan reparaciones, lugares donde se inunda o lugares seguros en caso de inundación y por el estilo.
 
+Ante alguna duda de como funciona el server o el backend o funcionamiento de la aplicación pueden contactarme por discord, mi user es GirlNames#9714.
+
 ## Requisitos
 
 - docker (<=20.10.14)
 - docker-Compose (<=2.2.3)
-- python3.10-venv
+- python3.10-venv (opcional)
 
 ## Docker (producción)
 
@@ -62,3 +64,6 @@ flask run
 ## Pythonanywhere
 
 La aplicación a su vez se encuentra hosteada en el siguiente link **enlace de la página**.
+
+> Nota: para las personas encargadas de mantener la página corriendo para cuando esta deje de poder accederse, entrar a https://www.pythonanywhere.com/ y logearse con el user y contraseña indicados (de no conocerlos consultar con Ivana Harris u otro profe de la catedra de UX).
+> Una vez adentro entrar a la pestaña Web en la parte superior derecha de la página y cliquear "Run until 3 months from today".
