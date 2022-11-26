@@ -113,7 +113,7 @@ switchColor.addEventListener('change', (event) => {
 		}
 		head.appendChild(style);
 
-		document.cookie = "invert_color=true";
+		setCookie("invert_color","true",7);
 	} 
 	
 	else {
@@ -126,7 +126,7 @@ switchColor.addEventListener('change', (event) => {
 			document.head.removeChild(document.styleSheets[index].ownerNode)
 		}
 
-		document.cookie = "invert_color=false";
+		setCookie("invert_color","false",7);
 	}
 })
 
@@ -143,9 +143,18 @@ function tamanioTexto(valor){
     document.getElementById('estadoRangoTexto').innerHTML = "Texto aumentado en " + aumentoPorcentual + "%";
 	const aumentoRelativo = 1 + valor * 0.1;
     document.getElementsByTagName( "html" )[0].style[ "font-size" ] = aumentoRelativo + "rem";
-	document.cookie = "tamanio_texto=" + valor;
+	setCookie("tamanio_texto",valor,7);
 
 	console.log(aumentoRelativo);
+}
+
+function setCookie(c_name,c_value,exdays) {
+   var exdate=new Date();
+   exdate.setDate(exdate.getDate() + exdays);
+   document.cookie=encodeURIComponent(c_name) 
+     + "=" + encodeURIComponent(c_value)
+     + (!exdays ? "" : "; expires="+exdate.toUTCString());
+     ;
 }
 
 

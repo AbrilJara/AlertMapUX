@@ -14,7 +14,7 @@ def index():
         return render_template('index.html')
     else:
         response = make_response(render_template('index.html'))
-        response.set_cookie('primera_vez', 'true')
+        response.set_cookie('primera_vez', 'true', max_age=60*60*24*7)
         response.set_cookie('invert_color', 'false')
         response.set_cookie('tamanio_texto', '0')
         return response
